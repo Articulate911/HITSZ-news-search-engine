@@ -1,0 +1,10 @@
+<div>
+  <a href="{% url 'news:home' %}">首页</a>
+</div>
+<form method="get" action="{% url 'news:news_search' %}">
+  <input type="search" name="q" placeholder="哈尔滨工业大学（深圳）">
+  <input type="radio" name="search_method" value="0"checked>模糊搜索
+  <input type="radio" name="search_method" value="1">精确搜索
+  <button type="submit">HITSZ一下！</button>
+</form>
+<br></br>

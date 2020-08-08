@@ -1,0 +1,21 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    {{ query }}_HITSZ新闻搜索
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+	<div>为您找到“{{ query }}”{{ search_method }}的相关结果共{{ result_cnt }}条</div>
+	<br></br>
+	{% for newspiece in news_search %}
+	<div>
+		<a>{{ newspiece.date }}</a>
+		<b>{{ newspiece.title }}</b>
+		<a href="{{ newspiece.url }}">查看详情</a>
+	</div>
+	<br></br>
+	{% endfor %}
+{% endblock content %}
